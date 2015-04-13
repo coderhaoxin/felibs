@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+bower install
+
+mv bower_components/es6-promise/promise.min.js ./dist/
+mv bower_components/fetch/fetch.js ./dist/
+
+cd zepto
+npm install
+MODULES="zepto event" ./node_modules/.bin/coffee make dist
+cd ..
+
+mv zepto/dist/zepto.min.js ./dist/
+
+./node_modules/.bin/uglifyjs ./dist/fetch.js -o dist/fetch.min.js
+
+cat dist/promise.min.js dist/fetch.min.js > dist/promise-fetch.min.js
+
+rm dist/fetch.js
+rm dist/fetch.min.js
+rm dist/promise.min.js

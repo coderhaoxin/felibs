@@ -1,0 +1,7 @@
+{
+  "name": "felibs",
+  "private": true,
+  "devDependencies": {
+    "uglify-js": "2"
+  }
+}
