@@ -16,8 +16,9 @@ mv zepto/dist/zepto.min.js ./dist/
 ./node_modules/.bin/uglifyjs ./dist/fetch.js -o dist/fetch.min.js
 ./node_modules/.bin/uglifyjs ./dist/efetch.js -o dist/efetch.min.js
 
-cat dist/promise.min.js dist/fetch.min.js dist/efetch.min.js > dist/promise-fetch.min.js
+cat dist/zepto.min.js dist/promise.min.js dist/fetch.min.js dist/efetch.min.js > dist/felibs.min.js
 
-rm dist/fetch.js dist/fetch.min.js
 rm dist/efetch.js dist/efetch.min.js
+rm dist/fetch.js dist/fetch.min.js
 rm dist/promise.min.js
+rm dist/zepto.min.js
