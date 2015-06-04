@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+npm install
+
 bower install
 
 mv bower_components/es6-promise/promise.min.js ./dist/
