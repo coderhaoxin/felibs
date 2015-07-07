@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-npm install
-
 bower install
+npm install
 
 mv bower_components/es6-promise/promise.min.js ./dist/
 mv bower_components/efetch/efetch.js ./dist/
@@ -24,3 +23,6 @@ rm dist/efetch.js dist/efetch.min.js
 rm dist/fetch.js dist/fetch.min.js
 rm dist/promise.min.js
 rm dist/zepto.min.js
+
+rm -r bower_components/
+rm -r node_modules/
