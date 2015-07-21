@@ -1,7 +1,14 @@
 {
   "name": "felibs",
   "private": true,
+  "version": "3.0.0",
+  "repository": "onebook/felibs",
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
     "uglify-js": "2"
-  }
+  },
+  "author": "haoxin",
+  "license": "MIT"
 }
