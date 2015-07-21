@@ -7,22 +7,21 @@ mv bower_components/es6-promise/promise.min.js ./dist/
 mv bower_components/efetch/efetch.js ./dist/
 mv bower_components/fetch/fetch.js ./dist/
 
-cd zepto
+cd jquery
 npm install
-MODULES="zepto event" ./node_modules/.bin/coffee make dist
+./node_modules/.bin/grunt custom:-ajax,-deprecated,-wrap,-deferred,-exports/amd
 cd ..
 
-mv zepto/dist/zepto.min.js ./dist/
+mv jquery/dist/jquery.min.js ./dist/
 
 ./node_modules/.bin/uglifyjs ./dist/fetch.js -o dist/fetch.min.js
 ./node_modules/.bin/uglifyjs ./dist/efetch.js -o dist/efetch.min.js
 
-cat dist/zepto.min.js dist/promise.min.js dist/fetch.min.js dist/efetch.min.js > dist/felibs.min.js
+cat dist/promise.min.js dist/fetch.min.js dist/efetch.min.js > dist/felibs.min.js
 
 rm dist/efetch.js dist/efetch.min.js
 rm dist/fetch.js dist/fetch.min.js
 rm dist/promise.min.js
-rm dist/zepto.min.js
 
 rm -r bower_components/
 rm -r node_modules/
